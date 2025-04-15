@@ -2,29 +2,25 @@
 #include <stdlib.h>
 #include "Projeto01.h"
 
-int aquilo(){
-int repeats = 0;
-char title[50];
-char word [50];
+int counterWord(){
+    char space = ' ';
+    int repeats = 1;
+    char title[1000];
+    char searchword[1000];
 
     printf("Insira o nome do arquivo: ");
-    scanf("%s", &title);
+    scanf("%s", title);
 
-    FILE *f = fopen(title, "r");
+    FILE *f = fopen("../%s", "r");
 
-    if (!f) {
-        printf("Erro na abertura do arquivo\n");
-        return 1;}
+    if (!f) {printf("Erro na abertura do arquivo\n");return 1;}
+    scanf("%[^\n]", searchword);
 
-    printf("Insira uma palavra para procurar (nada para quantidade maxima): ");
-    scanf("%s", &word[0]);
-
-    while (!feof(f)) {
-        fseek(f, sizeof (title), SEEK_SET);
-
-
-
-
+    while (fscanf(f, " %s", title) == 1) {
+        puts(title);
+        if (searchword[0] == space) {
+            repeats++;
+    };
     }
 
     fclose(f);return 0;}

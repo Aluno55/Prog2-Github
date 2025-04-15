@@ -5,6 +5,6 @@
 #ifndef PROJETO01_H
 #define PROJETO01_H
 
-int aquilo();
+int counterWord();
 
 #endif //PROJETO01_H
