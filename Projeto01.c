@@ -9,12 +9,11 @@ int counterWord(){
     char searchword[1000];
 
     printf("Insira o nome do arquivo: ");
-    scanf("%s", title);
+    scanf("%s %[^\n]", title, searchword);
 
-    FILE *f = fopen("../%s", "r");
+    FILE *f = fopen(title, "r");
 
     if (!f) {printf("Erro na abertura do arquivo\n");return 1;}
-    scanf("%[^\n]", searchword);
 
     while (fscanf(f, " %s", title) == 1) {
         puts(title);
