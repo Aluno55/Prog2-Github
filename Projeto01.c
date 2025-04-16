@@ -3,13 +3,16 @@
 #include "Projeto01.h"
 
 int counterWord() {
-    int repeats = 0;
+    int total = 0;
     char title[1000];
     char searchword[1000];
+    int specific=0;
+    char extra[1000];
 
     printf("Insira o nome do arquivo: ");
     scanf("%s", title);
-
+    scanf("%s", searchword)
+    
     FILE *f = fopen(title, "r");
 
     if (!f) {
@@ -18,10 +21,15 @@ int counterWord() {
     }
 
     while (fscanf(f, " %s", title) == 1) {
-        puts(title);
-        repeats++;
+        puts(extra);
+        if(extra == searchword){
+        specific++;
+        }
+        
+        total++;
     }
-    printf("Palavras:%d\n", repeats);
+    printf("Palavras Totais: %d\n", total);
+    if(!specific){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
     fclose(f);
     return 0;
 }
