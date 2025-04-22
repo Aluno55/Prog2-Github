@@ -11,7 +11,7 @@ int counterWord() {
 
     printf("Insira o nome do arquivo: ");
     scanf("%s", title);
-    scanf("%s", searchword)
+    scanf("%s", searchword);
     
     FILE *f = fopen(title, "r");
 
@@ -21,7 +21,6 @@ int counterWord() {
     }
 
     while (fscanf(f, " %s", title) == 1) {
-        puts(extra);
         if(extra == searchword){
         specific++;
         }
@@ -29,7 +28,7 @@ int counterWord() {
         total++;
     }
     printf("Palavras Totais: %d\n", total);
-    if(!specific){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
+    if(specific){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
     fclose(f);
     return 0;
 }
