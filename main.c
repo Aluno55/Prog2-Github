@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "Projeto01.h"
 
-int main(int argc, char *argv[]){
-    counterWord();
+int main(){
+
    return 0;}
