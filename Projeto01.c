@@ -9,7 +9,9 @@
 
 int counterWord(int count, char* search) {
     int total = 0;
-    int time=clock(), irl=;
+    // Pedi ajuda para Chat GPT a fazer a parte do tempo, explicando que as vezes o retorno não é int nem long.
+    time_t irl= time(NULL);
+    clock_t cpu=clock();
     char title[300];
     char searchword[1000];
     char extra[1000];
@@ -36,6 +38,7 @@ int counterWord(int count, char* search) {
     }
     printf("Palavras Totais: %d\n", count);
 //      printf("Quantidade da Palavra Selecionada: %d\n", specific);
-    printf("Tempo gasto pela CPU: %d", time-clock());
+    printf("Tempo de Execução da CPU: %.6f\n", ((double)(clock() - start_time)) / CLOCKS_PER_SEC);
+    printf("Tempo de Execução no fisico: %.6f segundos\n", difftime(time(NULL), start_real_time));
     fclose(f);return 0;
 }
