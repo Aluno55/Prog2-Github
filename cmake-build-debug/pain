@@ -1,1 +1,33 @@
-pain, there is only pain, why must i suffer from stupidness
+Avaliação do Projeto
+
+Nota: 3,4
+
+    O programa aceita os argumento em linha de comando da forma ./projeto-01 entrada.txt [palavra]?
+    Não.
+
+    O programa conta quantas vezes uma palavra fornecida pelo usuário aparece em um arquivo?
+    Parcialmente. O programa conta o número de palavras incorretamente.
+
+    O programa conta o total de palavras no arquivo quando o usuário não fornece palavra de busca?
+    Não.
+
+    O programa limita o número de palavras a serem contadas?
+    Não.
+
+    O programa é um projeto CMake?
+    Não.
+
+    O arquivo main.c possui apenas a função main?
+    Sim.
+
+    O programa faz alocação de memória corretamente?
+    O programa não faz alocação de memória.
+
+    O programa lida corretamente com casos de erro?
+    Sim.
+
+    O programa imprime o tempo gasto para execução (relógio físico e tempo de CPU)?
+    Não.
+
+    O projeto possui arquivo .gitignore correto na raiz do repositório?
+    Não.

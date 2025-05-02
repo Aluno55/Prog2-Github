@@ -4,6 +4,6 @@ project(untitled C)
 set(CMAKE_C_STANDARD 23)
 
 add_executable(untitled main.c
-        calc.c
-        calc.h
+        Projeto01.c
+        Projeto01.h
 )
