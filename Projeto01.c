@@ -36,9 +36,9 @@ int counterWord(int count, char* search) {
 
         total++;
     }
-    printf("Palavras Totais: %d\n", count);
+    printf("Palavras Totais: %d\n", total);
 //      printf("Quantidade da Palavra Selecionada: %d\n", specific);
-    printf("Tempo de Execução da CPU: %.6f\n", ((double)(clock() - start_time)) / CLOCKS_PER_SEC);
-    printf("Tempo de Execução no fisico: %.6f segundos\n", difftime(time(NULL), start_real_time));
+    printf("Tempo de Execução da CPU: %.6f\n", ((double)(clock() - cpu)) / CLOCKS_PER_SEC);
+    printf("Tempo de Execução no fisico: %.6f segundos\n", time(NULL) - irl);
     fclose(f);return 0;
 }
