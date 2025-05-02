@@ -14,6 +14,7 @@ int counterWord(int count, char* search) {
     char searchword[1000];
     char extra[1000];
 
+
     printf("Insira o nome do arquivo: ");
     scanf("%s", title);
 
