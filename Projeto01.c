@@ -12,7 +12,6 @@ int counterWord(int count, char* search) {
     int time=clock(), irl=;
     char title[300];
     char searchword[1000];
-    char limbo[50]={" ", ".", ",", "-", "!", "?", ":", ";"};
     char extra[1000];
 
     printf("Insira o nome do arquivo: ");
@@ -26,7 +25,7 @@ int counterWord(int count, char* search) {
 
     while (!feof(f)) {
         fgets(title, sizeof(title), f);
-        char* token = strtok(extra, *limbo);
+        char* token = strtok(extra, " ");
     }
 
 
