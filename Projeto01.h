@@ -6,6 +6,5 @@
 #define PROJETO01_H
 
 int counterWord(int count, char* search);
-int same(char* word, char* search);
 
 #endif //PROJETO01_H

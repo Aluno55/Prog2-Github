@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Projeto01.h"
+#include <time.h>
 
-int same(char* word, char* search){
-    for(int i = 0; word[i] != '\0' && search [i] != '\0'; i++){
-        if (word[i] != search[i])
-            {return word[i] == '\0' && search[i] == '\0';}
-    } return 1;
-};
+#include <string.h>
+
+
 
 int counterWord(int count, char* search) {
     int total = 0;
+    int time=clock(), irl=;
     char title[300];
     char searchword[1000];
-    int specific=0;
+    char limbo[50]={" ", ".", ",", "-", "!", "?", ":", ";"};
     char extra[1000];
 
     printf("Insira o nome do arquivo: ");
@@ -25,21 +24,18 @@ int counterWord(int count, char* search) {
         return 1;
     }
 
-    fgets(title, sizeof(title), f);
-    feof(f);
+    while (!feof(f)) {
+        fgets(title, sizeof(title), f);
+        char* token = strtok(extra, *limbo);
+    }
 
 
-    while (fscanf(f, " %s", extra) == 1) {
-        if(same(extra, searchword)){
-        specific++;
-        }
-        
+    while (fscanf(f, "%s", extra) == 1) {
+
         total++;
     }
     printf("Palavras Totais: %d\n", count);
-    if(specific){
-      printf("Quantidade da Palavra Selecionada: %d\n", specific);
-    }
-    fclose(f);
-    return 0;
+//      printf("Quantidade da Palavra Selecionada: %d\n", specific);
+    printf("Tempo gasto pela CPU: %d", time-clock());
+    fclose(f);return 0;
 }
