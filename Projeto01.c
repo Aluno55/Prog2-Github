@@ -14,9 +14,7 @@ void minus(char* str){
 }
 
 int counterWord(int count, char* search) {
-    // Pedi ajuda pro Chat GPT fazer a parte do tempo, explicando que as vezes o retorno não é int nem long.
-    time_t irl= time(NULL);
-    clock_t cpu=clock();
+    int irl= time(), cpu=clock();
     char title[300];
     int total = 0, specific = 0;
     char searchword[500];
@@ -24,12 +22,12 @@ int counterWord(int count, char* search) {
     char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
 
     printf("Insira o nome do arquivo: ");
-    scanf("%s", title);
+    scanf("%s", title);getchar();
     // Questionei o GPT para ver como não ser forçado a busca de palavra
-    getchar();
     fgets(searchword, sizeof(searchword), stdin);
     searchword[strcspn(searchword, "\n")] = '\0';
-    
+    minus(searchword);
+        
     FILE *f = fopen(title, "r");
     if (!f) {printf("Erro na abertura do arquivo\n");return 1;}
 
@@ -38,16 +36,15 @@ int counterWord(int count, char* search) {
         char* token = strtok(vine, limbo);
         while (token != NULL) {total++;
     minus(token);
-    if (strcmp(token, searchword) == 0) { specific++; }
+    if (strcmp(token, searchword) == 0) {specific++;}
     token = strtok(NULL, limbo);}      
     }
     //não tenho certeza dessa parte acima, não testei ainda
-    //acho que deixaria tudo minusculo, move pela linha, contaria uma palavra sem problemas
+    //deve pega a linha do arquivo e colocar palavra por palavra no token e comparar a searchword com o token ambos em minusculo
     
+    if(!specific){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
+    else{printf("Palavras Totais: %d\n", total);}
     
-    printf("Palavras Totais: %d\n", total);
-//      printf("Quantidade da Palavra Selecionada: %d\n", specific);
-    printf("Tempo de Execução da CPU: %.6f\n", (clock() - cpu) / CLOCKS_PER_SEC);
-    printf("Tempo de Execução no fisico: %.6f segundos\n", time(NULL) - irl);
+    printf("Tempo de Execução da CPU: %.6f\nTempo de Execução no fisico: %.6f segundos\n", ((clock() - cpu) / CLOCKS_PER_SEC), (time(NULL) - irl));
     fclose(f);return 0;
 }
