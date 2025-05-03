@@ -5,6 +5,7 @@
 #ifndef PROJETO01_H
 #define PROJETO01_H
 
+void minus(char* str)
 int counterWord(int count, char* search);
 
 #endif //PROJETO01_H
