@@ -13,7 +13,7 @@ void minus(char* str){
     }
 }
 
-int counterWord(int count, char* search) {
+int counterWord(int count, char search) {
     int irl= time(), cpu=clock();
     char title[300];
     int total = 0, specific = 0;
@@ -43,8 +43,10 @@ int counterWord(int count, char* search) {
     //deve pega a linha do arquivo e colocar palavra por palavra no token e comparar a searchword com o token ambos em minusculo
     
     if(!specific){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
-    else{printf("Palavras Totais: %d\n", total);}
+    else{printf("Palavras Totais (Max 1000): %d\n", total);}
     
     printf("Tempo de Execução da CPU: %.6f\nTempo de Execução no fisico: %.6f segundos\n", ((clock() - cpu) / CLOCKS_PER_SEC), (time(NULL) - irl));
-    fclose(f);return 0;
+    fclose(f);
+    
+    return 0;
 }
