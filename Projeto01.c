@@ -24,7 +24,7 @@ int counterWord(int count, char* search) {
     char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
 
     printf("Insira o nome do arquivo: ");
-    scanf("%s", title);getchar();
+    scanf("%s", title);
     // não entendi a busca de palavra
 
 
@@ -43,9 +43,9 @@ int counterWord(int count, char* search) {
     //deve pega a linha do arquivo e colocar palavra por palavra no token e comparar a searchword com o token ambos em minusculo
 
     if(specific){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
-    else{printf("Palavras Totais (Max 1000): %d\n", count-1);}
+    else{printf("Palavras Totais (Max 1000): %d\n", count-2);}
 
-    printf("Tempo de Execução da CPU: %.6f\nTempo de Execução no fisico: %.6f segundos\n", ((clock() - cpu) / CLOCKS_PER_SEC), (time(NULL) - irl));
+    printf("Tempo de Execução da CPU: %.5f\nTempo de Execução no fisico: %.5f segundos\n", ((clock() - cpu) / CLOCKS_PER_SEC), (time(NULL) - irl));
     fclose(f);
 
     return 0;
