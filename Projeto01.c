@@ -33,7 +33,7 @@ int counterWord(int count, char *search[]) {
         char* token = strtok(vine, limbo);
         while (token != NULL) {total++;
             minus(token);
-            if (strcmp(token, search[2]) == 0) {specific++;}
+            if (strcmp(token, wordle) == 0) {specific++;}
             token = strtok(NULL, limbo);}
     }
     //não tenho certeza dessa parte acima, não testei ainda
