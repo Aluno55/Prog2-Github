@@ -13,20 +13,17 @@ void minus(char* str){
     }
 }
 
-int counterWord(int count, char* search) {
-
+int counterWord(int count, char *search[]) {
     time_t irl= time(NULL);
     clock_t cpu=clock();
-    char title[300];
+    char title[200], *wordle=search[2];
     int total = 0, specific = 0;
-    char searchword[500];
     char vine[500];
     char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
 
     printf("Insira o nome do arquivo: ");
     scanf("%s", title);
     // não entendi a busca de palavra
-
 
     FILE *f = fopen(title, "r");
     if (!f) {printf("Erro na abertura do arquivo\n");return 1;}
@@ -35,18 +32,17 @@ int counterWord(int count, char* search) {
         fgets(vine, sizeof(vine), f);
         char* token = strtok(vine, limbo);
         while (token != NULL) {total++;
-    minus(token);
-    if (strcmp(token, searchword) == 0) {specific++;}
-    token = strtok(NULL, limbo);}
+            minus(token);
+            if (strcmp(token, search[2]) == 0) {specific++;}
+            token = strtok(NULL, limbo);}
     }
     //não tenho certeza dessa parte acima, não testei ainda
     //deve pega a linha do arquivo e colocar palavra por palavra no token e comparar a searchword com o token ambos em minusculo
 
-    if(specific){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
-    else{printf("Palavras Totais (Max 1000): %d\n", count-2);}
+    if(specific>0){printf("Quantidade da Palavra Selecionada: %d\n", specific);}
+    else{printf("Palavras Totais (Max 1000): %d\n", count-1);}
 
-    printf("Tempo de Execução da CPU: %.5f\nTempo de Execução no fisico: %.5f segundos\n", ((clock() - cpu) / CLOCKS_PER_SEC), (time(NULL) - irl));
-    fclose(f);
+    printf("Tempo de Execução da CPU: %.5ld\n", (clock() - cpu) / CLOCKS_PER_SEC);
+    printf("Tempo de Execução no fisico: %.5ld segundos\n", time(NULL) - irl);
 
-    return 0;
-}
+    fclose(f);return 0;}

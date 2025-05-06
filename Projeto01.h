@@ -6,6 +6,6 @@
 #define PROJETO01_H
 
 void minus(char* str);
-int counterWord(int count, char* search);
+int counterWord(int count, char* search[]);
 
 #endif //PROJETO01_H
