@@ -1,13 +1,17 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 
 #include "Projeto01.h"
-
-// argc conta os argumentos
-// *argv[X] pega o argumento em X
 int main(int argc, char *argv[]){
+    time_t irl= time(NULL);
+    clock_t cpu=clock();
 
-    if (argc == 1) {printf("Falta informar");} else if (argc == 2){
-    totalWords} else if (argc == 3){searchWords} else if (argc == 4){strcmp(token, wordle)}
-    counterWord(argc, argv);
-   return 0;}
+    if (argc == 1) {printf("Falta informar o arquivo\n");}
+    else if (argc == 2){totalWords();}
+    else if (argc == 3){searchWords(argv[2]);}
+    else if (argc >= 4){printf("Excesso de argumentos\n"); return 1;}
+
+    printf("Tempo de Execução da CPU: %.5ld\n", (clock() - cpu) / CLOCKS_PER_SEC);
+    printf("Tempo de Execução no fisico: %.5ld segundos\n", time(NULL) - irl);
+    return 0;}
