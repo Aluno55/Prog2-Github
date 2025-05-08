@@ -14,9 +14,9 @@ void minus(char* str){
 
 void totalWords(){
     char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
-    char vine[];
+    char vine[200];
     int count = 0;
-    char title[];
+    char title[200];
     printf("Insira o nome do arquivo: ");
     scanf("%s", title);
     FILE *f = fopen(title, "r");
@@ -27,12 +27,11 @@ void totalWords(){
             token = strtok(NULL, limbo);}}
 fclose(f);}
 
-
 void searchWords(char *wordle){
     char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
-    char vine[];
+    char vine[200];
     int count = 0;
-    char title[];
+    char title[200];
     printf("Insira o nome do arquivo: ");
     scanf("%s", title);
     FILE *f = fopen(title, "r");
