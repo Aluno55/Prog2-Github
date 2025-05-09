@@ -6,7 +6,7 @@
 #define PROJETO01_H
 
 void minus(char* str);
-void totalWords(char title);
-void searchWords(char *wordle, char title);
+void totalWords(char *title);
+void searchWords(char *wordle, char *title);
 
 #endif //PROJETO01_H

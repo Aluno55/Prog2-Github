@@ -12,11 +12,12 @@ void minus(char* str){
         tolower(str[i]);
 }}
 
-void totalWords(char title){
+void totalWords(char *title){
     char vine[200];
     int count = 0;
+
     FILE *f = fopen(title, "r");
-    if (!f) {printf("Erro na abertura do arquivo\n");return 1;}
+    if (!f) {printf("Erro na abertura do arquivo\n");exit(EXIT_FAILURE);}
     while (!feof(f) && fscanf(f, " %s", vine) != 0){
         char* token = strtok(vine, limbo);
         while (token != NULL) {
@@ -24,12 +25,10 @@ void totalWords(char title){
             token = strtok(NULL, limbo);}}
 fclose(f);}
 
-void searchWords(char *wordle, char title){
+void searchWords(char *wordle, char* title){
     char vine[200];
     int count = 0;
-    char title[200];
-    printf("Insira o nome do arquivo: ");
-    scanf("%s", title);
+
     FILE *f = fopen(title, "r");
     if (!f) {printf("Erro na abertura do arquivo\n");exit(EXIT_FAILURE);}
     fgets(vine, sizeof(*vine), f);
