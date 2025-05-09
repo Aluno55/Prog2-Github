@@ -25,7 +25,7 @@ void totalWords(char *title){
             token = strtok(NULL, limbo);}}
 fclose(f);}
 
-void searchWords(char *wordle, char* title){
+void searchWords(char *wordle, char *title){
     char vine[200];
     int count = 0;
 
