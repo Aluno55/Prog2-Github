@@ -1,16 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Projeto01.h"
-#include <time.h>
+#include <ctype.h>
 #include <string.h>
 
+// Pesquisando me mostrou um tolower que funciona além do ASCII
 void minus(char* str){
     for (int i = 0; str[i]; i++) {
-        if (str[i] >= 'A' && str[i] <= 'Z') {
-            str[i] = str[i] + ('a' - 'A');
-        }
-    }
-}
+        tolower(str[i]);
+}}
 
 void totalWords(){
     char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
