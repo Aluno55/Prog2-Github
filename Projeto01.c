@@ -4,29 +4,27 @@
 #include <ctype.h>
 #include <string.h>
 
+#define limbo " \n.,;:!?'()[]{}<>-_/|@#$%^&*+="
+
 // Pesquisando me mostrou um tolower que funciona além do ASCII
 void minus(char* str){
     for (int i = 0; str[i]; i++) {
         tolower(str[i]);
 }}
 
-void totalWords(){
-    char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
+void totalWords(char title){
     char vine[200];
     int count = 0;
-    char title[200];
-    printf("Insira o nome do arquivo: ");
-    scanf("%s", title);
     FILE *f = fopen(title, "r");
-    if (!f) {printf("Erro na abertura do arquivo\n");exit(EXIT_FAILURE);}
+    if (!f) {printf("Erro na abertura do arquivo\n");return 1;}
     while (!feof(f) && fscanf(f, " %s", vine) != 0){
         char* token = strtok(vine, limbo);
-        while (token != NULL) {count++;
+        while (token != NULL) {
+            count++;
             token = strtok(NULL, limbo);}}
 fclose(f);}
 
-void searchWords(char *wordle){
-    char limbo[]= " \n.,;:!?'()[]{}<>-_/|@#$%^&*+=";
+void searchWords(char *wordle, char title){
     char vine[200];
     int count = 0;
     char title[200];
