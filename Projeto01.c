@@ -1,13 +1,5 @@
 #include "Projeto01.h"
 
-int interativa(int Y, int X) {
-    int result = 0;
-    for (int i = 0; i < Y; ++i) {
-        result+=X;
-    }
-    return result;
-}
-
 int recursiva (int x, int y) {
     if (x == 0 || y == 0) return 0;
     return x + recursiva(x, y-1);
@@ -27,4 +19,10 @@ int gold (int ag) {
     if (ag == 0) return 0;
     if (ag == 1) return 1;
     return gold(ag-1) + gold(ag-2);
+}
+
+int vector (int* ling, int tam) {
+    if (tam == 0) return 0;
+    if (ling[tam]) return ling[tam];
+    return ling[tam] + vector(ling, tam-1);
 }

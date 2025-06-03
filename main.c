@@ -3,6 +3,8 @@
 #include "Projeto01.h"
 
 int main() {
-    printf("%d\n", gold(3));
+    int tam = 3;
+    int *ling[tam];
+    printf("%d\n", vector(*ling, tam));
 return 0;
 }
