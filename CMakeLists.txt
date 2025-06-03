@@ -1,19 +1,8 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.10)
 project(untitled C)
 
-set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD 23)
 
-include(FetchContent)
-
-FetchContent_Declare(
-        libprog-Atividades
-         GIT_REPOSITORY https://github.com/Aluno55/libprog-Atividades
-         GIT_TAG origin/main
-        # or GIT_TAG 0.0.1
+add_executable(untitled main.c
+        Projeto01.c
 )
-FetchContent_MakeAvailable(libprg)
-
-add_executable(untitled main.c)
-
-# linking libprg
-target_link_libraries(untitled PUBLIC libprog-Atividades)
