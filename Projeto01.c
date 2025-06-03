@@ -26,7 +26,9 @@ int vector (int* ling, int tam) {
 }
 
 int bi_search (int* vector, int tam, int val, int start) {
-    if (val == vector[tam - start]/2) return -1;
-    if (vector[tam - start]/2 < val) return bi_search(vector, tam, val, (tam - start)/2);
-    if (vector[tam - start]/2 > val) return bi_search(vector, (tam - start)/2, val, start);
+    if (start > tam) return -1;
+    int mid = (tam+start)/2;
+    if (val == vector[mid]) return mid;
+    if (vector[mid] < val) return bi_search(vector, tam, val, mid+1);
+    if (vector[mid] > val) return bi_search(vector, mid-1, val, start);
 }
