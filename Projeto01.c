@@ -22,3 +22,9 @@ int fatorial(int fat) {
     if (fat <= 1) return 1;
     return fat * fatorial(fat-1);
 }
+
+int gold (int ag) {
+    if (ag == 0) return 0;
+    if (ag == 1) return 1;
+    if (ag <= 2) return gold(ag-1) + gold(ag-2);
+}
