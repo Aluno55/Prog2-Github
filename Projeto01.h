@@ -3,9 +3,10 @@
 
 int potency(int x, int y);
 int fatorial(int fat);
-int recursiva (int x, int y);
+int multiplicar (int x, int y);
 int gold (int ag);
 int vector (int* ling, int tam);
+int bi_search (int* vector, int tam, int val, int start);
 
 
 #endif //PROJETO01_H

@@ -1,8 +1,8 @@
 #include "Projeto01.h"
 
-int recursiva (int x, int y) {
+int multiplicar (int x, int y) {
     if (x == 0 || y == 0) return 0;
-    return x + recursiva(x, y-1);
+    return x + multiplicar(x, y-1);
 }
 
 int potency(int x, int y) {
@@ -23,4 +23,10 @@ int gold (int ag) {
 int vector (int* ling, int tam) {
     if (tam == 0) return 0;
     return ling[tam-1] + vector(ling, tam-1);
+}
+
+int bi_search (int* vector, int tam, int val, int start) {
+    if (val == vector[tam - start]/2) return -1;
+    if (vector[tam - start]/2 < val) return bi_search(vector, tam, val, (tam - start)/2);
+    if (vector[tam - start]/2 > val) return bi_search(vector, (tam - start)/2, val, start);
 }

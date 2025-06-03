@@ -3,8 +3,7 @@
 #include "Projeto01.h"
 
 int main() {
-    int tam = 3;
-    int *ling[tam] =;
-    printf("%d\n", vector(*ling, tam));
+
+    printf("%d", bi_search(*vector, 5,val, 1));
 return 0;
 }
