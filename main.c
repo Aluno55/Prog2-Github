@@ -3,7 +3,8 @@
 #include "Projeto01.h"
 
 int main() {
-    int s =potency(2, 3);
-    int r=fatorial(4);
+    printf("%d\n", potency(5,2));
+    printf("%d\n", fatorial(3));
+    printf("%d\n", recursiva(3,3));
 return 0;
 }
