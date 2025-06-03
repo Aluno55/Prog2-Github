@@ -30,5 +30,5 @@ int bi_search (int* vector, int tam, int val, int start) {
     int mid = (tam+start)/2;
     if (val == vector[mid]) return mid;
     if (vector[mid] < val) return bi_search(vector, tam, val, mid+1);
-    if (vector[mid] > val) return bi_search(vector, mid-1, val, start);
+    return bi_search(vector, mid-1, val, start);
 }
