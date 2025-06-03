@@ -7,4 +7,5 @@ int recursiva (int x, int y);
 int gold (int ag);
 int vector (int* ling, int tam);
 
+
 #endif //PROJETO01_H
