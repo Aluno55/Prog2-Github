@@ -1,8 +1,9 @@
-//
-// Created by aluno on 03/06/25.
-//
-
 #include "projeto02.h"
-//chamados usa lista
+
+
+// pilha actions, char [solicitar, decricao, prioridade, acoes]
+// fila, char [chamado, tamanho, capacity]
+
+
 //historico usa lista cadeada
 //atendimento ação na pilha
