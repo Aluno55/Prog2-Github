@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(untitled main.c
         Projeto01.c
+        projeto02.c
+        projeto02.h
 )
