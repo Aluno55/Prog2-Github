@@ -3,3 +3,6 @@
 //
 
 #include "projeto02.h"
+//chamados usa lista
+//historico usa lista cadeada
+//atendimento ação na pilha
