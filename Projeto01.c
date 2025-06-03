@@ -23,6 +23,5 @@ int gold (int ag) {
 
 int vector (int* ling, int tam) {
     if (tam == 0) return 0;
-    if (ling[tam]) return ling[tam];
-    return ling[tam] + vector(ling, tam-1);
+    return ling[tam-1] + vector(ling, tam-1);
 }

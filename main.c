@@ -4,7 +4,7 @@
 
 int main() {
     int tam = 3;
-    int *ling[tam];
+    int *ling[tam] =;
     printf("%d\n", vector(*ling, tam));
 return 0;
 }
