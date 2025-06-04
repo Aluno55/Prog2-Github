@@ -6,7 +6,8 @@ int multiplicar (int x, int y) {
 }
 
 int potency(int x, int y) {
-    if (x == 0 || y == 0) return 1;
+    if (y == 0) return 1;
+    if (x == 0 || x == 1) return x;
     return x * potency(x, y-1);
 }
 
