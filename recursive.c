@@ -20,6 +20,7 @@ int gold (int ag) {
     if (ag <= 1) return ag;
     return gold(ag-1) + gold(ag-2);
 }
+//O(2^n)
 
 int vector (int* ling, int tam) {
     if (tam == 0) return 0;
