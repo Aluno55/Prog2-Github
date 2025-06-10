@@ -1,4 +1,4 @@
-#include "Projeto01.h"
+#include "recursive.h"
 
 int multiplicar (int x, int y) {
     if (x == 0 || y == 0) return 0;
