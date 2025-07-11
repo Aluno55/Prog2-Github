@@ -75,12 +75,6 @@ void posorder (tree_t *t) {
 //     //x = ???
 //     }
 // }
-
-// int heights(tree_t*t) {
-//     if (t != NULL) {
-//         return t->tam;
-//     } return 0;}
-//
 // int bonsai (tree_t *t) {
 //     if (t != NULL) {
 //         return heights(t->menor) - heights(t->maior);

@@ -4,6 +4,8 @@
 #define INITIAL 10
 #include <stdbool.h>
 
+
+
 // arvore
 typedef struct no tree_t;
 tree_t *ramificar(int val);
@@ -11,7 +13,6 @@ void arsonist(tree_t *t);
 bool searchTreeBoogaloo(tree_t* r, int v);//not inside itself
 tree_t* growth(tree_t* root, int v);
 tree_t *cut(tree_t*r, int v);
-// int heights(tree_t*t);
 bool searchTree (tree_t *r, int v);
 void inorder (tree_t *t);
 // int bonsai (tree_t *t) ;
@@ -74,5 +75,14 @@ int* insertion(int* l, int tam);
 int* selection(int* l, int tam);
 int* merge(int *l, int start, int tam);
 int* quick (int* l, int str, int end);
+
+typedef struct avl node_avl_t;
+node_avl_t* create_avl();
+node_avl_t* add_avl(node_avl_t* root, int value);
+node_avl_t* remove_avl(node_avl_t* root, int value);
+bool search_avl(node_avl_t* root, int value);
+void in_order_avl(node_avl_t* root);
+void pre_order_avl(node_avl_t* root);
+void post_order_avl(node_avl_t* root);
 
 #endif
