@@ -39,7 +39,7 @@ int balanceio(node_avl_t *v) {return v? (altura(v->menor) - altura(v->maior)) : 
 
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 
-int left(node_avl_t *v){
+node_avl_t* left(node_avl_t *v){
     node_avl_t* u = v->maior;
     v->maior = u->menor;
     u->menor = v;
@@ -47,7 +47,7 @@ int left(node_avl_t *v){
     u->tam = max(altura(u−>menor), altura(u−>maior)) + 1;
     return u;}
 
-int right(node_avl_t *v){
+node_avl_t* right(node_avl_t *v){
     node_avl_t* u = v->menor;
     v->menor = u->maior;
     u->maior = v;
@@ -55,11 +55,11 @@ int right(node_avl_t *v){
     u->tam = max(altura(u−>menor), altura(u−>maior)) + 1;
     return u;}
 
-node_avl_t ∗double_right(node_avl_t ∗v) {
+node_avl_t* double_right(node_avl_t ∗v) {
 v->menor = left(v->menor);
 return right(v);}
 
-node_avl_t ∗double_left(node_avl_t ∗v) {
+node_avl_t* double_left(node_avl_t ∗v) {
 v->maior = right(v->maior);
 return left(v);}
 
@@ -74,12 +74,38 @@ node_avl_t* add_avl(node_avl_t* root, int value){
         root->maior = add_avl(root->maior, value);
     } else return root;
     root->tam = max(altura(root->menor), altura(root->maior)) + 1;
-
-    int x = balanceio(root);
-   
-
     
+    int b = balanceio(root);
+    if (b > 1 && value < root->menor->val) return right(root);
+    if (b > 1 && value > root->menor->val) return double_right(root);
+    if (b < -1 && value > root->maior->val) return left(root);
+    if (b < -1 && value < root->maior->val) return double_left(root);
+
     return root;}
 
-node_avl_t* remove_avl(node_avl_t* root, int value);
-bool search_avl(node_avl_t* root, int value);  
+bool search_avl(node_avl_t* root, int value){
+    if (!root) return false;
+    if (value == root->val) return true;
+    if (value < root->val) return search_avl(root->menor, value);
+    return search_avl(root->maior, value);}
+
+node_avl_t* remove_avl(node_avl_t* root, int value){
+    if (!root) return root;
+    if (value < root->val) {root->menor = remove_avl(root->menor, value)}
+    else if (value > root->val) {root->maior = remove_avl(root->maior, value)}
+    else if (!root->maior || !root->menor){
+        node_avl_t* temp = root->menor ? root->menor : root->maior;
+        free(root); return temp;}
+    else {
+        node_avl_t* successor = find_min(root->maior);
+        root->val = successor->val;
+        root->maior = remove_avl(root->maior, successor->val);}
+
+    root->tam = 1 + max(altura(root->menor), altura(root->maior))
+
+    int b = balanceio(root);
+    if (b > 1 && balanceio(root->menor) >=0) return right(root);
+    if (b > 1 && balanceio(root->menor) <0) return double_right(root);
+    if (b < -1 && balanceio(root->maior) <=0) return left(root);
+    if (b < -1 && balanceio(root->maior) >0) return double_left(root);
+    return root;}
