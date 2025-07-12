@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include "libprg/libprg.h"
 
-//create não tem valor??? criar no add?
-
 typedef struct avl {
     int val, tam;
     struct avl *menor, *maior;
@@ -87,26 +85,6 @@ bool search_avl(node_avl_t *root, int value) {
     return search_avl(root->maior, value);}
 
 node_avl_t *find_min(node_avl_t *r) {while (r && r->menor) r = r->menor;return r;}
-
-node_avl_t* remove_avl(node_avl_t* root, int value){
-    if (!root) return root;
-    if (value < root->val) {root->menor = remove_avl(root->menor, value);}
-    else if (value > root->val) {root->maior = remove_avl(root->maior, value);}
-    else if (!root->maior || !root->menor){
-        node_avl_t* temp = root->menor ? root->menor : root->maior;
-        free(root); return temp;}
-    else {
-        node_avl_t* successor = find_min(root->maior);
-        root->val = successor->val;
-        root->maior = remove_avl(root->maior, successor->val);}
-    root->tam = 1 + max(altura(root->menor), altura(root->maior));
-
-    int b = balanceio(root);
-    if (b > 1 && balanceio(root->menor) >=0) return right(root);
-    if (b > 1 && balanceio(root->menor) <0) return double_right(root);
-    if (b < -1 && balanceio(root->maior) <=0) return left(root);
-    if (b < -1 && balanceio(root->maior) >0) return double_left(root);
-    return root;}
 
 node_avl_t *remove_avl(node_avl_t *root, int value) {
     if (!root) return root;
